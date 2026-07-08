@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="parcbot">
+
+    <xacro:include filename="tyres.xacro"/>
+
+    <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+    <material name="blue">
+        <color rgba="0.3 0.0 1.0 1.0"/>
+    </material>
+    
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.15" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.8 0.5 0.15"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 0.15" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.8 0.5 0.15"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+            <mass value="12.0"/>
+            <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.5"/>
+        </inertial>
+    </link>
+
+    <!-- Adding the tyres via xacro -->
+     <!-- TOP RIGHT -->
+    <xacro:steering_tyre name="tyre1" parent_link="base_link" origin="0.25 0.4 0.15" rotate="${-pi/2} 0.0 0.0" axis="1"/> 
+    <!-- TOP LEFT -->
+    <xacro:steering_tyre name="tyre2" parent_link="base_link" origin="0.25 -0.4 0.15" rotate="${-pi/2} 0.0 0" axis="1"/>
+    <!-- BOTTOM RIGHT -->
+    <xacro:tyre name="tyre3" parent_link="base_link" origin="-0.25 0.4 0.15" rotate="${-pi/2} 0.0 0" axis="1"/>
+    <!-- BOTTOM LEFT -->
+    <xacro:tyre name="tyre4" parent_link="base_link" origin="-0.25 -0.4 0.15" rotate="${-pi/2} 0.0 0" axis="1"/>
+
+
+</robot>
