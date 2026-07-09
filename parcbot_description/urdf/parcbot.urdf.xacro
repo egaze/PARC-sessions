@@ -3,6 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="parcbot">
 
     <xacro:include filename="tyres.xacro"/>
+    <xacro:include filename="gazebo.xacro"/>
 
     <material name="red">
         <color rgba="1.0 0.0 0.0 1.0"/>

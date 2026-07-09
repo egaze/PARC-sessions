@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- ACKERMANN -->
+    <gazebo>
+        <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
+        <left_joint>tyre3_joint</left_joint>
+        <right_joint>tyre4_joint</right_joint>
+        <left_steering_joint>tyre1_steer_joint</left_steering_joint>
+        <right_steering_joint>tyre2_steer_joint</right_steering_joint>
+        <wheel_base>0.12</wheel_base>
+        <wheel_separation>0.8</wheel_separation>
+        <wheel_radius>0.15</wheel_radius>
+        <steering_limit>0.85</steering_limit>
+        <min_velocity>-2</min_velocity>
+        <max_velocity>10</max_velocity>
+        <topic>cmd_vel</topic>
+        </plugin>
+    </gazebo>
+
+    <!-- TYRES & CHASSIS -->
+    <!-- Chassis friction -->
+    <gazebo reference="body">
+        <mu1>0.02</mu1>
+        <mu2>0.02</mu2>
+        <!-- <material>Gazebo/Grey</material> -->
+    </gazebo>
+
+    <!-- Wheel friction -->
+    <gazebo reference="tyre1_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <!-- <material>Gazebo/Black</material> -->
+    </gazebo>
+
+    <gazebo reference="tyre2_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <!-- <material>Gazebo/Black</material> -->
+    </gazebo>
+
+    <gazebo reference="tyre3_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <!-- <material>Gazebo/Black</material> -->
+    </gazebo>
+
+    <gazebo reference="tyre4_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <!-- <material>Gazebo/Black</material> -->
+    </gazebo>
+
+</robot>
