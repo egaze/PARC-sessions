@@ -106,7 +106,7 @@ def generate_launch_description():
     ld.add_action(gazebo)
     ld.add_action(spawn)
     ld.add_action(rviz)
-    ld.add_action(jsp_gui)
+    # ld.add_action(jsp_gui)
     ld.add_action(rsp)
     ld.add_action(gz_ros_bridge)
 

@@ -18,6 +18,39 @@
         </plugin>
     </gazebo>
 
+    <!-- LIDAR -->
+    <gazebo reference="lidar_link">
+        <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+            <render_engine>ogre</render_engine>
+        </plugin>
+        <material>Gazebo/Green</material>
+
+        <sensor name="laser" type="gpu_lidar">
+            <pose> 0 0 0.043 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>50</update_rate>
+            <always_on>true</always_on>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-1.57</min_angle>
+                        <max_angle>1.57</max_angle>
+                        <resolution>1</resolution>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.03</min>
+                    <max>12</max>
+                </range>
+            </ray>
+
+            <topic>/scan</topic>
+            <gz_frame_id>lidar_link</gz_frame_id>
+
+        </sensor>
+    </gazebo>
+
     <!-- TYRES & CHASSIS -->
     <!-- Chassis friction -->
     <gazebo reference="body">
