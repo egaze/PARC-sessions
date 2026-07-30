@@ -1,0 +1,7 @@
+{
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "urdf-visualizer.packages": {
+        "parcbot_description" : "src/urdf/parcbot"
+    },
+    "cmake.sourceDirectory": "/home/eyiram-gaze/ros2_ws_teaching/src/bringup_pkg"
+}
