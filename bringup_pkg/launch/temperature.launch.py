@@ -65,7 +65,7 @@ def generate_launch_description():
     default_world = os.path.join(
         get_package_share_directory('bringup_pkg'),
         'worlds',
-        'empty.world.sdf'
+        'empty.world'
     )
 
     world = LaunchConfiguration('world')
