@@ -49,6 +49,34 @@
             <gz_frame_id>laser_frame</gz_frame_id>
 
         </sensor>
+    </gazebo> 
+
+    <!-- CAMERA -->
+    <gazebo reference="camera_link_optical">
+        <material>Gazebo/Red</material>
+        <sensor type="camera" name="camera">
+            <update_rate>30.0</update_rate>
+            <camera name="head">
+                <camera_info_topic>camera/camera_info</camera_info_topic>
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>600</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>50</far>
+                </clip>
+                <!-- <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise> -->
+            </camera>
+            <topic>camera/image_raw</topic>
+            <gz_frame_id>camera_link_optical</gz_frame_id>
+        </sensor>
     </gazebo>
 
     <!-- TYRES & CHASSIS -->
